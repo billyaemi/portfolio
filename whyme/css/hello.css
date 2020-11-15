@@ -63,6 +63,7 @@
 .content > .paragraph {
   grid-row: 2 / 3;
   line-height: 1.5;
+  font-size: 20px;
 }
 
 .heading {

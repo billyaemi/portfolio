@@ -18,162 +18,252 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-/*back to main*/
-.main-btn {
-    font-size: 300%;
-    font-weight: 600;
-    border-radius: 100%;
-    color: #2C5364;
-    position: absolute;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 4% 0 0 5%;
-    z-index: 10;
-}
-.main-btn:hover {
-    transition: all 0.5s;
-}
-.main-txt:hover {
-    color: #fff;
-    transition: all 0.5s;
-}
-
-/*navigation*/
-nav {
-    /* overflow: hidden; */
-    position: absolute;
-    transform: translateX(0px);
-    height: 100vh;
-    width: 100vw;
-    /*cubic-bezier을 활용하여 속도에 효과를 줌*/
-    transition: all 300ms cubic-bezier(.8, 0, .33, 1);
-    float: right;
-    right: 0;
-    z-index: 999;
-    pointer-events: none;
-}
-
-nav.nav-open {
-    transform: translateX(0px);
-    border-radius: 0% 0% 0% 0%;
-    background: rgba(0, 0, 0, 1);
-    /*pointer-events를 활용하여 앞서 비활성화했던 것을 다시 살림*/
-    pointer-events: auto;
-}
-
-nav .menu-btn {
-    position: absolute ;
-    right: 5%;
-    padding: 0;
-    width: 90px;
-    height: 90px;
-    z-index: 2;
-    top: 5%;
-    pointer-events: auto !important;
-    cursor: pointer;
-}
-
-nav .menu-btn .line {
-    vertical-align: middle;
-    padding: 0;
-    width: 70px;
-    background: #2C5364;
-    height: 3px;
-    margin-bottom: 5px;
-    transition: all 700ms cubic-bezier(.9, 0, .33, 1);
-}
-
-nav .menu-btn .line.line--1 {
-    width: 50px;
-    transform: rotate(0) translateY(0);
-}
-
-nav .menu-btn .line.line--1.line-cross {
-    width: 40px;
-    transform: rotate(45deg) translateY(10px);
-    background: rgba(255,255,255,0.8);
-}
-
-nav .menu-btn .line.line--2 {
-    width: 40px;
-    transform: translateX(0);
-}
-
-nav .menu-btn .line.line--2.line-fade-out {
-    width: 40px;
-    transform: translate(30px);
-    opacity: 0;
-}
-
-nav .menu-btn .line.line--3 {
-    width: 30px;
-    transform: rotate(0) translateY(0);
-}
-
-nav .menu-btn .line.line--3.line-cross {
-    width: 40px;
-    transform: rotate(-45deg) translateY(-11px);
-    background: rgba(255,255,255,0.8);
-}
-
-nav .nav-links {
-    position: absolute;
-    left: 0;
-    top: 0;
+/* header */
+.header-nav {
+    background-color: #fff;
+    box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+    position: fixed;
     width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transform: translateX(-100px);
-    opacity: 0;
-    transition: all 800ms cubic-bezier(.9, 0, .33, 1);
+    z-index: 3;
 }
-
-nav .nav-links.fade-in {
-    opacity: 1;
-    transform: translateX(0px);
+  
+.header-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: #fff;
 }
-
-nav .nav-links .link {
-    margin: 20px 0;
+  
+.header-nav li a {
+    display: block;
+    padding: 20px 20px;
+    border-right: 1px solid #f4f4f4;
     text-decoration: none;
-    color: rgba(255,255,255,1);
+}
+  
+.header-nav li a:hover,
+.header-nav .menu-btn:hover {
+    background-color: #f4f4f4;
+}
+  
+.header-nav .logo {
     font-weight: 600;
-    font-size: 500%;
-    transition: all 300ms cubic-bezier(.9, 0, .33, 1);
-    float: none;
-    text-align: center;
-    width: 70%;
-}
-
-nav .nav-links .link:hover {
-    color: #2C5364;
-    transition: all 0.2s;
-    letter-spacing: 20px;
-}
-
-nav .nav-links .sns {
-    margin: 20px 0;
-    text-decoration: none;
-    color: rgba(255,255,255,1);
-    font-family: 'Montserrat';
-    font-weight: 100;
-    font-size: 15px;
-    transition: all 300ms cubic-bezier(.9, 0, .33, 1);
+    display: block;
     float: left;
-    width: 70%;
-    height: 30px;
+    font-size: 2em;
+    padding: 10px 30px;
+    text-decoration: none;
+}
+  
+/* menu */
+.header-nav .menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+}
+  
+/* menu icon */
+.header-nav .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    /* float: right; */
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+}
+  
+.header-nav .menu-icon .navicon {
+    background: #333;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 18px;
+}
+  
+.header-nav .menu-icon .navicon:before,
+.header-nav .menu-icon .navicon:after {
+    background: #333;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+  
+.header-nav .menu-icon .navicon:before {
+    top: 5px;
+}
+  
+.header-nav .menu-icon .navicon:after {
+    top: -5px;
+}
+  
+/* menu btn */
+.header-nav .menu-btn {
+    display: none;
+}
+  
+.header-nav .menu-btn:checked ~ .menu {
+    max-height: 240px;
+}
+  
+.header-nav .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+}
+  
+.header-nav .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+}
+  
+.header-nav .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+}
+  
+.header-nav .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header-nav .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0;
 }
 
-nav .nav-links .sns:hover {
-    color: #2C5364;
-    text-decoration: underline;
-    text-decoration-color: #2C5364;
-    text-decoration-style: solid;
-    transition: all 0.5s;
+.works:hover > a > span {
+	transition: all .3s ease-in-out;
+	color: white
+}
+.hello:hover > a > span {
+	transition: all .3s ease-in-out;
+	color: white
+}
+.yours:hover > a > span {
+	transition: all .3s ease-in-out;
+	color: white
+}
+  
+/* 48em = 768px */
+@media (min-width: 48em) {
+    .header-nav li {
+      float: left;
+    }
+    .header-nav li a {
+      padding: 20px 30px;
+    }
+    .header-nav .menu {
+      clear: none;
+      float: right;
+      max-height: none;
+    }
+    .header-nav .menu-icon {
+      display: none;
+    }
 }
 
+/* download link */
+a.down {
+    position: fixed;
+    cursor: pointer;
+    top: 5vh;
+    /*left: 50%;
+    color: white;
+    transform: translate3d(-50%, -50%, 0); */
+    color: #2c5364;
+    padding: 0.7em calc(0.7em * 1.2);
+    display: inline-block;
+    border: 1px solid transparent;
+    position: relative;
+    font-size: 20px;
+    letter-spacing: 0.07em;
+}
+a.down .text {
+    font-family: proxima-nova;
+    transform: translate3d(0, 0.7em, 0);
+    display: block;
+    transition: transform 0.4s cubic-bezier(0.2, 0, 0, 1) 0.4s;
+}
+a.down:after {
+    position: absolute;
+    content: '';
+    bottom: -5px;
+    left: calc(0.7em * 1.2);
+    right: calc(0.7em * 1.2);
+    height: 2px;
+    background: #2c5364;
+    z-index: -1;
+    transition: transform 0.8s cubic-bezier(1, 0, 0.37, 1) 0.2s, right 0.2s cubic-bezier(0.04, 0.48, 0, 1) 0.6s, left 0.4s cubic-bezier(0.04, 0.48, 0, 1) 0.6s;
+    transform-origin: left;
+}
+  
+.line {
+    position: absolute;
+    background: #2C5364;
+}
+.line.-right, .line.-left {
+    width: 2px;
+    bottom: -5px;
+    top: -5px;
+    transform: scale3d(1, 0, 1);
+}
+.line.-top, .line.-bottom {
+    height: 2px;
+    left: -5px;
+    right: -5px;
+    transform: scale3d(0, 1, 1);
+}
+.line.-right {
+    right: -5px;
+    transition: transform 0.1s cubic-bezier(1, 0, 0.65, 1.01) 0.23s;
+    transform-origin: top;
+}
+.line.-top {
+    top: -5px;
+    transition: transform 0.08s linear 0.43s;
+    transform-origin: left;
+}
+.line.-left {
+    left: -5px;
+    transition: transform 0.08s linear 0.51s;
+    transform-origin: bottom;
+}
+.line.-bottom {
+    bottom: -5px;
+    transition: transform 0.3s cubic-bezier(1, 0, 0.65, 1.01);
+    transform-origin: right;
+}
+  
+a.down:hover .text,
+a.down:active .text {
+    transform: translate3d(0, 0, 0);
+    transition: transform 0.6s cubic-bezier(0.2, 0, 0, 1) 0.4s;
+}
+a.down:hover:after,
+a.down:active:after {
+    transform: scale3d(0, 1, 1);
+    right: -5px;
+    left: -5px;
+    transform-origin: right;
+    transition: transform 0.2s cubic-bezier(1, 0, 0.65, 1.01) 0.17s, right 0.2s cubic-bezier(1, 0, 0.65, 1.01), left 0s 0.3s;
+}
+a.down:hover .line,
+a.down:active .line {
+    transform: scale3d(1, 1, 1);
+}
+a.down:hover .line.-right,
+a.down:active .line.-right {
+    transition: transform 0.1s cubic-bezier(1, 0, 0.65, 1.01) 0.2s;
+    transform-origin: bottom;
+ }
+a.down:hover .line.-top,
+a.down:active .line.-top {
+    transition: transform 0.08s linear 0.4s;
+    transform-origin: right;
+}
+a.down:hover .line.-left,
+a.down:active .line.-left {
+    transition: transform 0.08s linear 0.48s;
+    transform-origin: top;
+}
+a.down:hover .line.-bottom,
+a.down:active .line.-bottom {
+    transition: transform 0.5s cubic-bezier(0, 0.53, 0.29, 1) 0.56s;
+    transform-origin: left;
+}
