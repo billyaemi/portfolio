@@ -166,7 +166,7 @@ a.down {
     /*left: 50%;
     color: white;
     transform: translate3d(-50%, -50%, 0); */
-    color: #2c5364;
+    color: #21799c;
     padding: 0.7em calc(0.7em * 1.2);
     display: inline-block;
     border: 1px solid transparent;
@@ -187,7 +187,7 @@ a.down:after {
     left: calc(0.7em * 1.2);
     right: calc(0.7em * 1.2);
     height: 2px;
-    background: #2c5364;
+    background: #21799c;
     z-index: -1;
     transition: transform 0.8s cubic-bezier(1, 0, 0.37, 1) 0.2s, right 0.2s cubic-bezier(0.04, 0.48, 0, 1) 0.6s, left 0.4s cubic-bezier(0.04, 0.48, 0, 1) 0.6s;
     transform-origin: left;
@@ -195,7 +195,7 @@ a.down:after {
   
 .line {
     position: absolute;
-    background: #2C5364;
+    background: #21799c;
 }
 .line.-right, .line.-left {
     width: 2px;
