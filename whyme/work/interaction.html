@@ -2,45 +2,158 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <title>Why me.</title>
     <link rel="stylesheet" href=".././css/style3.css"/>
     <link rel="stylesheet" href=".././css/cursor2.css"/>
-    <link rel="shortcut icon" type="image⁄x-icon" href="./img/circle2.png">
+    <link rel="stylesheet" href=".././css/work.css"/>
+    <link rel="shortcut icon" type="image⁄x-icon" href=".././img/circle2.png">
+    <style>
+        span.tl{
+            background:#E00420;
+            color:#fff;
+            border:none;
+            cursor:pointer;
+            transition:800ms ease all;
+            outline:none;
+        }
+        span.tl:hover{
+            background:transparent;
+            color:#E00420;
+        }
+        span.tl:before,
+        span.tl:after{
+            content:'';
+            position:absolute;
+            top:0;
+            right:0;
+            height:2px;
+            width:0;
+            background: #E00420;
+            transition:400ms ease all;
+        }
+        span.tl:after{
+            right:inherit;
+            top:inherit;
+            left:0;
+            bottom:0;
+        }
+        span.tl:hover:before,
+        span.tl:hover:after{
+            width:100%;
+            transition:800ms ease all;
+        }
+
+        span.tl2{
+            background: #ff87b7;;
+            color:#fff;
+            border:none;
+            cursor:pointer;
+            transition:800ms ease all;
+            outline:none;
+        }
+        span.tl2:hover{
+            background:transparent;
+            color: #ff87b7;;
+        }
+        span.tl2:before,
+        span.tl2:after{
+            content:'';
+            position:absolute;
+            top:0;
+            right:0;
+            height:2px;
+            width:0;
+            background: #ff87b7;;
+            transition:400ms ease all;
+        }
+        span.tl2:after{
+            right:inherit;
+            top:inherit;
+            left:0;
+            bottom:0;
+        }
+        span.tl2:hover:before,
+        span.tl2:hover:after{
+            width:100%;
+            transition:800ms ease all;
+        }
+    </style>
 </head>
 <body class="list">
     <div id="gradient">
-        <div class="main-btn">
-            <a href=".././index.html" target="_self" class="main-txt">?<a>
-        </div>
-        <nav>
-            <div class="menu-btn">
-                <div class="line line--1"></div>
-                <div class="line line--2"></div>
-                <div class="line line--3"></div>
-            </div>
-        
-            <div class="nav-links">
-                <a href=".././works.html" class="link">Works</a>
-                <a href=".././hello.html" class="link">Hello</a>
-                <a href=".././yours.html" class="link">Yours</a>
-            </div>
-        </nav>
-        <div>
-            <p style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #2c5364; font-weight: 700; font-size: 60px;">상세 페이지 작업중입니다.</p>
-        </div>
+        <header class="header-nav">
+            <a href=".././index.html" class="logo">?</a>
+            <input class="menu-btn" type="checkbox" id="menu-btn" />
+            <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+            <ul class="menu">
+                <li class="works"><a href=".././works.html">W<span>orks</span></a></li>
+                <li class="hello"><a href=".././hello.html">H<span>ello</span></a></li>
+                <li class="yours"><a href=".././yours.html">Y<span>ours</span></a></li>
+            </ul>
+        </header>
+        <main>
+            <section class="slides"> 
+              
+                <section class="slides-nav">
+                    <nav class="slides-nav__nav">
+                    <button class="slides-nav__prev js-prev">Prev</button>
+                    <button class="slides-nav__next js-next">Next</button>
+                    </nav>
+                </section>
+          
+                <section class="slide is-active">
+                    <div class="slide__content">
+                    <figure class="slide__figure"><div class="slide__img" style="background-image: url(.././img/sivan3.jpg)"></div></figure>
+                    <header class="slide__header">
+                        <h2 class="slide__title">
+                            <!-- https://billyaemi.github.io/Wonheeyun/sivansivan/index.html -->
+                            <span class="title-line">
+                                <a href="https://billyaemi.github.io/Wonheeyun/sivansivan/index.html" target="_blank">
+                                    <span class="tl">SivanSivan</span>
+                                </a>
+                            </span>
+                            <span class="title-line" style="font-size: 20px; margin-top: 5%;color:#E00420">
+                                <span style="line-height: 1.5;">
+                                가수 Troye Sivan을 주제로 작업한 웹사이트입니다.<br/>
+                                <br/>
+                                인터랙션 프로그래밍이라는 이름에 걸맞는 인터랙션을 부여하였고<br/>
+                                메인에 타이포를 주로 사용하여 트렌디함을 보여주고자 했습니다.
+                                </span>
+                            </span>
+                        </h2>
+                    </header>
+                    </div>
+                </section>
+          
+                <section class="slide">
+                    <div class="slide__content">
+                    <figure class="slide__figure"><div class="slide__img" style="background-image: url(.././img/film.png)"></div></figure>
+                    <header class="slide__header">
+                        <h2 class="slide__title">
+                            <span class="title-line">
+                                <a href="https://billyaemi.github.io/www/index.html" target="_blank">
+                                    <span class="tl2">WWW</span>
+                                </a>
+                            </span>
+                            <!-- https://billyaemi.github.io/www/index.html -->
+                            <span class="title-line" style="font-size: 20px; margin-top: 5%;color:#ff87b7;">
+                                <span style="line-height: 1.5;">
+                                    영화감독 Wes Anderson을 주제로 작업한 웹사이트입니다.<br/>
+                                    감독만의 분위기를 웹 상에서 나타내고자 하였습니다.<br/>
+                                    <br/>
+                                    감독이 주로 사용하는 폰트와 컬러를 사용해 웹 디자인을 진행하였습니다.<br/>
+                                    빈티지와 트렌드를 잘 보여줄 수 있는 인터랙션을 주었습니다.
+                                </span>
+                            </span>
+                    </header>
+                    </div>
+                </section>
+          
+            </section>
+        </main>
 
-        <!-- <div class="box1">
-            <p>
-                Let me<br/>
-                introduce<br/>
-                my circle!
-            </p>
-        </div> -->
-        <!-- <div class="box2">
-            <p>
-                <img src="img/circle2.png" alt="" class="spin">
-            </p>
-        </div> -->
+        
         <div id="cursor-dot">&nbsp;</div>
         <div id="cursor-bg">&nbsp;</div>
         <div id="progress"><span>&nbsp;</span></div>
@@ -49,6 +162,6 @@
     <script src=".././vendor/jquery/jquery.min.js" type="text/javascript"></script>
     <script type="text/javascript" src=".././js/gsap.min.js"></script>
     <script type="text/javascript" src=".././js/cursor.js"></script>
-    <script type="text/javascript" src=".././js/nav.js"></script>
+    <script type="text/javascript" src=".././js/work.js"></script>
 </body>
 </html>

@@ -5,42 +5,262 @@
     <title>Why me.</title>
     <link rel="stylesheet" href=".././css/style3.css"/>
     <link rel="stylesheet" href=".././css/cursor2.css"/>
-    <link rel="shortcut icon" type="image⁄x-icon" href="./img/circle2.png">
+    <link rel="stylesheet" href=".././css/work.css"/>
+    <link rel="shortcut icon" type="image⁄x-icon" href="../img/circle2.png">
+    <style>
+        span.tl{
+            background:#0082c8;
+            color:#fff;
+            border:none;
+            cursor:pointer;
+            transition:800ms ease all;
+            outline:none;
+        }
+        span.tl:hover{
+            background:transparent;
+            color: #0082c8;
+        }
+        span.tl:before,
+        span.tl:after{
+            content:'';
+            position:absolute;
+            top:0;
+            right:0;
+            height:2px;
+            width:0;
+            background: #0082c8;
+            transition:400ms ease all;
+        }
+        span.tl:after{
+            right:inherit;
+            top:inherit;
+            left:0;
+            bottom:0;
+        }
+        span.tl:hover:before,
+        span.tl:hover:after{
+            width:100%;
+            transition:800ms ease all;
+        }
+
+        span.tl2{
+            background: #ff0000;
+            color: #fff;
+            border:none;
+            cursor:pointer;
+            transition:800ms ease all;
+            outline:none;
+        }
+        span.tl2:hover{
+            background:transparent;
+            color: #ff0000;
+        }
+        span.tl2:before,
+        span.tl2:after{
+            content:'';
+            position:absolute;
+            top:0;
+            right:0;
+            height:2px;
+            width:0;
+            background: #ff0000;
+            transition:400ms ease all;
+        }
+        span.tl2:after{
+            right:inherit;
+            top:inherit;
+            left:0;
+            bottom:0;
+        }
+        span.tl2:hover:before,
+        span.tl2:hover:after{
+            width:100%;
+            transition:800ms ease all;
+        }
+
+        span.tl3{
+            background: #141414;
+            color: #fff;
+            border:none;
+            cursor:pointer;
+            transition:800ms ease all;
+            outline:none;
+        }
+        span.tl3:hover{
+            background:transparent;
+            color: #141414;
+        }
+        span.tl3:before,
+        span.tl3:after{
+            content:'';
+            position:absolute;
+            top:0;
+            right:0;
+            height:2px;
+            width:0;
+            background: #141414;
+            transition:400ms ease all;
+        }
+        span.tl3:after{
+            right:inherit;
+            top:inherit;
+            left:0;
+            bottom:0;
+        }
+        span.tl3:hover:before,
+        span.tl3:hover:after{
+            width:100%;
+            transition:800ms ease all;
+        }
+
+        span.tl4{
+            background: #bdc3c7;
+            color: #141414;
+            border:none;
+            cursor:pointer;
+            transition:800ms ease all;
+            outline:none;
+        }
+        span.tl4:hover{
+            background:transparent;
+            color: #bdc3c7;
+        }
+        span.tl4:before,
+        span.tl4:after{
+            content:'';
+            position:absolute;
+            top:0;
+            right:0;
+            height:2px;
+            width:0;
+            background: #bdc3c7;
+            transition:400ms ease all;
+        }
+        span.tl4:after{
+            right:inherit;
+            top:inherit;
+            left:0;
+            bottom:0;
+        }
+        span.tl4:hover:before,
+        span.tl4:hover:after{
+            width:100%;
+            transition:800ms ease all;
+        }
+    </style>
 </head>
 <body class="list">
     <div id="gradient">
-        <div class="main-btn">
-            <a href=".././index.html" target="_self" class="main-txt">?<a>
-        </div>
-        <nav>
-            <div class="menu-btn">
-                <div class="line line--1"></div>
-                <div class="line line--2"></div>
-                <div class="line line--3"></div>
-            </div>
-        
-            <div class="nav-links">
-                <a href=".././works.html" class="link">Works</a>
-                <a href=".././hello.html" class="link">Hello</a>
-                <a href=".././yours.html" class="link">Yours</a>
-            </div>
-        </nav>
-        <div>
-            <p style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #2c5364; font-weight: 700; font-size: 60px;">상세 페이지 작업중입니다.</p>
-        </div>
+        <header class="header-nav">
+            <a href="./index.html" class="logo">?</a>
+            <input class="menu-btn" type="checkbox" id="menu-btn" />
+            <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+            <ul class="menu">
+                <li class="works"><a href=".././works.html">W<span>orks</span></a></li>
+                <li class="hello"><a href=".././hello.html">H<span>ello</span></a></li>
+                <li class="yours"><a href=".././yours.html">Y<span>ours</span></a></li>
+            </ul>
+        </header>
 
-        <!-- <div class="box1">
-            <p>
-                Let me<br/>
-                introduce<br/>
-                my circle!
-            </p>
-        </div> -->
-        <!-- <div class="box2">
-            <p>
-                <img src="img/circle2.png" alt="" class="spin">
-            </p>
-        </div> -->
+        <main>
+            <section class="slides"> 
+              
+                <section class="slides-nav">
+                    <nav class="slides-nav__nav">
+                    <button class="slides-nav__prev js-prev">Prev</button>
+                    <button class="slides-nav__next js-next">Next</button>
+                    </nav>
+                </section>
+          
+                <section class="slide is-active">
+                    <div class="slide__content">
+                    <figure class="slide__figure"><div class="slide__img" style="background-image: url(.././img/tatt.jpg)"></div></figure>
+                    <header class="slide__header">
+                        <h2 class="slide__title">
+                            <span class="title-line">
+                                <a href="https://www.instagram.com/greenloversclub/?hl=ko" target="_blank">
+                                    <span class="tl">#TATTILB</span>
+                                </a>
+                            </span>
+                            <!-- https://www.instagram.com/greenloversclub/?hl=ko -->
+                            <span class="title-line" style="font-size: 20px; margin-top: 5%;color:#0082c8">
+                                <span style="line-height: 1.5;">
+                                    좋아하는 문구를 사용하여 작업한 폰케이스 디자인입니다.<br/>
+                                    타이포만을 사용하여 심플한 무드를 전하고자 했습니다.
+                                </span>
+                            </span>
+                        </h2>
+                    </header>
+                    </div>
+                </section>
+          
+                <section class="slide">
+                    <div class="slide__content">
+                    <figure class="slide__figure"><div class="slide__img" style="background-image: url(.././img/rgb.jpg)"></div></figure>
+                    <header class="slide__header">
+                        <h2 class="slide__title">
+                            <span class="title-line">
+                                <a href="https://www.instagram.com/greenloversclub/?hl=ko" target="_blank">
+                                    <span class="tl2">404 ERROR</span>
+                                </a>
+                            </span>
+                            <!-- https://www.instagram.com/greenloversclub/?hl=ko -->
+                            <span class="title-line" style="font-size: 20px; margin-top: 5%;color:#ff0000;">
+                                <span style="line-height: 1.5;">
+                                    사이트 접속 오류시 나오는 문구를 활용해 작업한 폰케이스 디자인입니다.<br/>
+                                    문구가 주는 강렬한 느낌을 색채에도 나타내고자 하였고 해학적인 의미를 담아냈습니다.
+                                </span>
+                            </span>
+                    </header>
+                    </div>
+                </section>
+          
+                <section class="slide">
+                    <div class="slide__content">
+                    <figure class="slide__figure"><div class="slide__img" style="background-image: url(.././img/billy.jpg)"></div></figure>
+                    <header class="slide__header">
+                        <h2 class="slide__title">
+                            <span class="title-line">
+                                <a href="https://www.instagram.com/greenloversclub/?hl=ko" target="_blank">
+                                    <span class="tl3">Fire Works</span>
+                                </a>
+                            </span>
+                            <!-- https://www.instagram.com/greenloversclub/?hl=ko -->
+                            <span class="title-line" style="font-size: 20px; margin-top: 5%;color:#141414">
+                                <span style="line-height: 1.5;">
+                                    불꽃놀이를 주제로 작업한 마스킹테이프 입니다.<br/>
+                                    직접 찍은 사진을 편집하고 활용하여 디자인하였습니다.
+                                </span>
+                            </span>
+                    </header>
+                    </div>
+                </section>
+            
+                <section class="slide">
+                    <div class="slide__content">
+                    <figure class="slide__figure"><div class="slide__img" style="background-image: url(.././img/vio3.jpg)"></div></figure>
+                    <header class="slide__header">
+                        <h2 class="slide__title">
+                            <span class="title-line">
+                                <a href="https://www.instagram.com/bliiy__5128/?hl=ko" target="_blank">
+                                    <span class="tl4">Poster Design</span>
+                                </a>
+                            </span>
+                            <!-- https://www.instagram.com/bliiy__5128/?hl=ko -->
+                            <span class="title-line" style="font-size: 20px; margin-top: 5%;color:#bdc3c7">
+                                <span style="line-height: 1.5;">
+                                    직접 찍은 사진들을 영화 포스터로 재해석했습니다.<br/>
+                                    사진을 편집하고 그에 어울리는 단어로 제목을 지어 포스터로 제작했습니다.
+                                </span>
+                            </span>
+                        </h2>
+                    </header>
+                    </div>
+                </section> 
+          
+            </section>
+        </main>
+
         <div id="cursor-dot">&nbsp;</div>
         <div id="cursor-bg">&nbsp;</div>
         <div id="progress"><span>&nbsp;</span></div>
@@ -49,6 +269,6 @@
     <script src=".././vendor/jquery/jquery.min.js" type="text/javascript"></script>
     <script type="text/javascript" src=".././js/gsap.min.js"></script>
     <script type="text/javascript" src=".././js/cursor.js"></script>
-    <script type="text/javascript" src=".././js/nav.js"></script>
+    <script type="text/javascript" src=".././js/work.js"></script>
 </body>
 </html>
